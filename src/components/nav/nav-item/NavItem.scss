@@ -1,0 +1,26 @@
+@import "../../../global.scss";
+
+.nav-item {
+  color: $grey;
+  width: 100%;
+  min-width: 100px;
+  list-style: none;
+  font-weight: bold;
+  padding: 8px;
+  cursor: pointer;
+  &:hover {
+    // color: $primary;
+    .nav-text {
+      color: $primary;
+    }
+  }
+  //   margin: 0px 10px;
+  &.active {
+    border: 1px solid $grey;
+    border-radius: 5px;
+    color: $primary;
+  }
+  i {
+    margin-right: 10px;
+  }
+}
