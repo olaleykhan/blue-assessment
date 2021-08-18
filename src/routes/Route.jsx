@@ -5,9 +5,9 @@ import Dashboard from "../pages/dashboard/Dashboard";
 
 const Route = () => {
   return (
-    <div>
+    <>
       <Dashboard />
-    </div>
+    </>
   );
 };
 
