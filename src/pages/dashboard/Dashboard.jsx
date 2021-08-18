@@ -16,12 +16,19 @@ export class Dashboard extends Component {
     };
   }
 
+  // on a bigger project with more time, redux functionalityu and an axios instance would be appropriate.
+  // in the main time....
+  // component did mount loads random images on load while
+  // the handle submit method quaries the api with the data search term passed into in by header component.
+  // there is a case of passing prop to parent there which can be restructured and completely removed at the introduction of reduc to the project.
+
   componentDidMount() {
     axios
       .get(
         "https://api.unsplash.com/photos/?client_id=ca66pjxhkigqER_Nnn60-V4Nk7RbP9AaHSQX6wk4Zns"
       )
       .then((res) => {
+        // the mapping function can be exported into an helper function and put into a utils  folder but oh well!!!!/.
         const data = res.data.map((item) => {
           return {
             name: item.user.username,
