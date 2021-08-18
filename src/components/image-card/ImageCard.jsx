@@ -19,11 +19,11 @@ const ImageCard = ({ name, location, age, imageUrl }) => {
       </div>
       <div className="details">
         <p className="name">
-          {" "}
           {name} , {age}
         </p>
         <p className="location">
-          <i className="fas fa-map-marker-alt"></i> {location}
+          <i className="fas fa-map-marker-alt"></i>{" "}
+          {location ? location : "No Location"}
         </p>
 
         <div className="card-buttons">

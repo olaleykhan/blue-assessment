@@ -5,58 +5,21 @@ import FilterBar from "./filter-bar/FilterBar";
 import "./Main.scss";
 
 class Main extends React.Component {
-  constructor() {
-    super();
+  // const accessKey = "ca66pjxhkigqER_Nnn60-V4Nk7RbP9AaHSQX6wk4Zns";
+  // https://api.unsplash.com/photos/?client_id=accesskey
+  // 'https://api.unsplash.com/photos/?client_id=ca66pjxhkigqER_Nnn60-V4Nk7RbP9AaHSQX6wk4Zns'
+  // .then(res=>{
+  //   this.set
+  // })
 
-    this.state = {
-      peopleData: [
-        {
-          name: "williams pepple",
-          location: "seating aple",
-          age: 27,
-          imageUrl: `https://images.unsplash.com/photo-1544725176-7c40e5a71c5e?ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&ixlib=rb-1.2.1&auto=format&fit=crop&w=747&q=80`,
-        },
-        {
-          name: "aliggato pepple",
-          location: "startrek oliga",
-          age: 27,
-          imageUrl: `https://images.unsplash.com/photo-1544725176-7c40e5a71c5e?ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&ixlib=rb-1.2.1&auto=format&fit=crop&w=747&q=80`,
-        },
-        {
-          name: "admind alobama",
-          location: "denmark, illinois",
-          age: 27,
-          imageUrl: `https://images.unsplash.com/photo-1544725176-7c40e5a71c5e?ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&ixlib=rb-1.2.1&auto=format&fit=crop&w=747&q=80`,
-        },
-        {
-          name: "syndicate employee",
-          location: "laos, chine",
-          age: 27,
-          imageUrl: `https://images.unsplash.com/photo-1544725176-7c40e5a71c5e?ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&ixlib=rb-1.2.1&auto=format&fit=crop&w=747&q=80`,
-        },
-        {
-          name: "gomora statham",
-          location: "aso rock, koe",
-          age: 27,
-          imageUrl: `https://images.unsplash.com/photo-1544725176-7c40e5a71c5e?ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&ixlib=rb-1.2.1&auto=format&fit=crop&w=747&q=80`,
-        },
-        {
-          name: "lupillle lacido",
-          location: "nigeria, aso",
-          age: 27,
-          imageUrl: `https://images.unsplash.com/photo-1544725176-7c40e5a71c5e?ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&ixlib=rb-1.2.1&auto=format&fit=crop&w=747&q=80`,
-        },
-      ],
-    };
-  }
   render() {
     return (
       <div className="main">
         <FilterBar />
 
         <div className="display">
-          {this.state.peopleData.map((data, i) => (
-            <ImageCard {...data} />
+          {this.props.peopleData.map((data, i) => (
+            <ImageCard key={i} {...data} />
           ))}
         </div>
       </div>
