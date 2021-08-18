@@ -12,4 +12,10 @@
   cursor: pointer;
   box-sizing: border-box;
   font-size: 11px;
+
+  &.badge {
+    width: 70px;
+    // height: 25px;
+    padding: 6px;
+  }
 }
