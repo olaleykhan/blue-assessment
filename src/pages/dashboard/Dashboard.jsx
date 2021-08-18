@@ -42,11 +42,7 @@ export class Dashboard extends Component {
         this.setState({ peopleData: data });
       });
 
-    // get the screen size
-
-    // console.log(w);
-  }
-  resize = () =>
+    // get the screen size and adjust screen accordingly
     setInterval(() => {
       const w = window.innerWidth;
       if (w < 600) {
@@ -55,6 +51,7 @@ export class Dashboard extends Component {
         this.setState({ showNav: true });
       }
     }, 1000);
+  }
 
   handleSubmit = async (e, term) => {
     e.preventDefault();
@@ -63,7 +60,6 @@ export class Dashboard extends Component {
     const res = await axios.get(
       `https://api.unsplash.com/search/photos?page=1&query=${term}?&client_id=ca66pjxhkigqER_Nnn60-V4Nk7RbP9AaHSQX6wk4Zns`
     );
-    console.log(res);
     const data = await res.data.results.map((item) => {
       return {
         name: item.user.username,
