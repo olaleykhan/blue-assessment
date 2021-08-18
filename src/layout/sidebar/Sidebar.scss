@@ -22,3 +22,10 @@
     color: $dark;
   }
 }
+
+@media only screen and (max-width: 600px) {
+  .sidebar {
+    width: fit-content;
+    margin-left: 0px;
+  }
+}

@@ -3,11 +3,12 @@
 .nav-item {
   color: $grey;
   width: 100%;
-  min-width: 100px;
+  // min-width: 100px;
   list-style: none;
   font-weight: bold;
-  padding: 8px;
+  padding: 12px;
   cursor: pointer;
+  margin-bottom: 8px;
   &:hover {
     // color: $primary;
     .nav-text {
@@ -22,5 +23,12 @@
   }
   i {
     margin-right: 10px;
+  }
+}
+
+@media only screen and (max-width: 600px) {
+  .nav-item {
+    padding: 12px 2px;
+    margin-right: 2px;
   }
 }

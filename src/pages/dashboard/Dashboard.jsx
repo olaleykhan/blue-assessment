@@ -13,6 +13,7 @@ export class Dashboard extends Component {
 
     this.state = {
       peopleData: [],
+      showNav: false,
     };
   }
 
@@ -40,7 +41,20 @@ export class Dashboard extends Component {
 
         this.setState({ peopleData: data });
       });
+
+    // get the screen size
+
+    // console.log(w);
   }
+  resize = () =>
+    setInterval(() => {
+      const w = window.innerWidth;
+      if (w < 600) {
+        this.setState({ showNav: false });
+      } else {
+        this.setState({ showNav: true });
+      }
+    }, 1000);
 
   handleSubmit = async (e, term) => {
     e.preventDefault();
@@ -65,9 +79,10 @@ export class Dashboard extends Component {
   };
 
   render() {
+    // this.resize();
     return (
       <div className="dashboard">
-        <Sidebar />
+        <Sidebar showNav={this.state.showNav} />
         <div className="main-section">
           <Header handleSubmit={(e, term) => this.handleSubmit(e, term)} />
           {this.state.peopleData.length ? (
