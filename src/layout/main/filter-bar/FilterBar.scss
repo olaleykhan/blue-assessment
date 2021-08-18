@@ -1,5 +1,6 @@
 .filter-bar {
   display: flex;
+  flex-wrap: wrap;
 
   //   background-color: white;
   margin: 20px 0px;
@@ -17,5 +18,11 @@
     border-top-right-radius: 5px;
     border-bottom-right-radius: 5px;
     border-right: none;
+  }
+}
+
+@media only screen and (max-width: 600px) {
+  .filter-bar {
+    display: none;
   }
 }

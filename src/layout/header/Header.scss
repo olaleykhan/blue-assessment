@@ -88,3 +88,15 @@
     }
   }
 }
+
+@media only screen and (max-width: 600px) {
+  .header {
+    flex-direction: column;
+    height: fit-content;
+    margin-bottom: 20px;
+    .search-form {
+      margin-bottom: 20px;
+      // height: 150px !important;
+    }
+  }
+}

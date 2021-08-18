@@ -10,7 +10,7 @@ export class Header extends Component {
     super(props);
     this.state = {
       term: "",
-      active: true,
+      active: false,
     };
   }
 
