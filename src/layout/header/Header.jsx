@@ -1,27 +1,37 @@
 import React from "react";
+
+import Button from "../../components/ui/button/Button";
 import "./Header.scss";
+import avatar from "../../assets/avatar.jpg";
 
 const Header = () => {
   return (
     <div className="header">
       <form className="search-form">
-        <label>
-          <i class="fas fa-search"></i>
+        <label className="search-label">
+          <i className="fas fa-search"></i>
         </label>
         <input
           className="search-input"
-          placeholder="Find Something ..."
+          placeholder="Find Something..."
           type="search"
         />
+        <Button>Search</Button>
       </form>
       <div className="items">
         <div className="notifications">
-          <i class="fas fa-bell"></i>
+          <i className="fas fa-2x fa-bell"></i>
           <span className="count"> 3</span>
         </div>
-        <div className="avatar"> avater</div>
+        <div className="avatar">
+          <img src={avatar} alt={avatar} />
+          <span className="status"> </span>
+        </div>
 
-        <div className="options"> Name</div>
+        <div className="options">
+          {" "}
+          Abigail <i className="fas fa-angle-down"></i>
+        </div>
       </div>
     </div>
   );

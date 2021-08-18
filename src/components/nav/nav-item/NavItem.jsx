@@ -5,7 +5,7 @@ const NavItem = ({ children, icon, active }) => {
   return (
     // <li className={"nav-item " + active ? "active" : null}>
     <li className={`nav-item ${active ? "active" : null}`}>
-      <i class={`fas fa-${icon} `}></i>{" "}
+      <i className={`fas fa-${icon} `}></i>{" "}
       <span className="nav-text">{children}</span>
     </li>
   );
