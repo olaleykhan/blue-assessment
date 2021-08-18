@@ -1,6 +1,7 @@
 import React, { Component } from "react";
 
 import Button from "../../components/ui/button/Button";
+import Notifications from "../notifications/Notifications";
 import "./Header.scss";
 import avatar from "../../assets/avatar.jpg";
 
@@ -9,6 +10,7 @@ export class Header extends Component {
     super(props);
     this.state = {
       term: "",
+      active: true,
     };
   }
 
@@ -16,12 +18,6 @@ export class Header extends Component {
     const { name, value } = e.target;
     this.setState({ [name]: value });
   };
-
-  // handleSubmit = async (e) => {
-  //   e.preventDefault();
-  //   console.log(this.state.term);
-  //   this.setState({ term: "" });
-  // };
 
   render() {
     return (
@@ -46,8 +42,14 @@ export class Header extends Component {
           />
           <Button>Search</Button>
         </form>
+
+        {/* second half of header nav */}
+
         <div className="items">
-          <div className="notifications">
+          <div
+            className="notification-icon"
+            onClick={() => this.setState({ active: !this.state.active })}
+          >
             <i className="fas fa-2x fa-bell"></i>
             <span className="count"> 3</span>
           </div>
@@ -59,6 +61,8 @@ export class Header extends Component {
           <div className="options">
             Abigail <i className="fas fa-angle-down"></i>
           </div>
+
+          <Notifications active={this.state.active} />
         </div>
       </div>
     );
